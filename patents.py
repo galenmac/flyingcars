@@ -7,8 +7,13 @@ sesh = HTMLSession()
 
 r = sesh.get("https://patents.google.com/?q=(flying+car)&oq=(flying+car)")
 
-# items = r.html.find(".cover-info")
-#
+r.html.render()
+
+# items = r.html.find("#resultsContainer")
+
+items = r.html.find("div .search-results")
+
+print(items)
 # for item in items:
 #         # print(item)
 #         tag = item.find("a", first = True)
